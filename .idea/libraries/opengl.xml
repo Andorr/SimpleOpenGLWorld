@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="opengl">
+    <CLASSES>
+      <root url="jar://C:/Libraries/JOGL/gluegen-rt-natives-windows-amd64.jar!/" />
+      <root url="jar://C:/Libraries/JOGL/gluegen-rt.jar!/" />
+      <root url="jar://C:/Libraries/JOGL/jogl-all-natives-windows-amd64.jar!/" />
+      <root url="jar://C:/Libraries/JOGL/jogl-all.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

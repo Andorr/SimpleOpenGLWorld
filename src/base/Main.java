@@ -24,7 +24,6 @@ public class Main extends GLCanvas implements GLEventListener {
     private static GLUT glut;
 
     private static final float mapWidth = 30f;
-    private static final float cameraRotation = 0f;
 
     private Draw draw;
     private Human player;
@@ -131,18 +130,18 @@ public class Main extends GLCanvas implements GLEventListener {
             objects.add(new Sphere(new Vector(-20f,4f + 10f + i,-i*2f),new Vector(0.7f,0.7f,0.7f),draw,true));
         }
 
-        objects.add(new Model(new Vector(0f,0f,15f),new Vector(1f,1f,1f), new Vector(0f,180f,0f), new Vector(0f,205/255f,0f),"Dragon",gl));
-        objects.add(new Model(new Vector(30f,5f,30f), new Vector(1f,1f,1f),new Vector(0f,0f,0f), new Vector(0.5f,0.3f,0.5f),"Flag",gl));
-        objects.add(new Model(new Vector(-30f,5f,30f), new Vector(1f,1f,1f),new Vector(0f,0f,0f), new Vector(0.5f,0.3f,0.5f),"Flag",gl));
-        objects.add(new Model(new Vector(-30f,5f,-30f), new Vector(1f,1f,1f),new Vector(0f,0f,0f), new Vector(0.5f,0.3f,0.5f),"Flag",gl));
-        objects.add(new Model(new Vector(30f,5f,-30f), new Vector(1f,1f,1f),new Vector(0f,0f,0f), new Vector(0.5f,0.3f,0.5f),"Flag",gl));
-        objects.add(new Model(new Vector(5.5f,4f,-30f), new Vector(1f,1f,1f),new Vector(0f,0f,0f), new Vector(0.5f,0.3f,0.5f),"Flag",gl));
-        objects.add(new Model(new Vector(-5.5f,4f,-30f), new Vector(1f,1f,1f),new Vector(0f,180f,0f), new Vector(0.5f,0.3f,0.5f),"Flag",gl));
-        objects.add(new Model(new Vector(20f,3f,0f), new Vector(1f,1f,1f),new Vector(0f,-90f,0f), new Vector(0.7f,0.3f,0.1f),"Plane",gl));
-        objects.add(new Model(new Vector(3f,0f,3f), new Vector(1f,1f,1f),new Vector(0f,0f,0f), new Vector(0.2f,0.2f,0.2f),"Rock",gl));
-        objects.add(new Model(new Vector(20f,0f,-3f), new Vector(1f,1f,1f),new Vector(0f,0f,0f), new Vector(0.2f,0.2f,0.2f),"Rock",gl));
-        objects.add(new Model(new Vector(-14f,0f,13f), new Vector(1f,1f,1f),new Vector(0f,0f,0f), new Vector(0.2f,0.2f,0.2f),"Rock",gl));
-        objects.add(new Model(new Vector(-10f,0f,-12f), new Vector(1f,1f,1f),new Vector(0f,0f,0f), new Vector(0.2f,0.2f,0.2f),"Rock",gl));
+        objects.add(new Model(new Vector(0f,0f,15f),new Vector(1f,1f,1f), new Vector(0f,180f,0f), new Vector(0f,205/255f,0f),"models/Dragon",gl));
+        objects.add(new Model(new Vector(30f,5f,30f), new Vector(1f,1f,1f),new Vector(0f,0f,0f), new Vector(0.5f,0.3f,0.5f),"models/Flag",gl));
+        objects.add(new Model(new Vector(-30f,5f,30f), new Vector(1f,1f,1f),new Vector(0f,0f,0f), new Vector(0.5f,0.3f,0.5f),"models/Flag",gl));
+        objects.add(new Model(new Vector(-30f,5f,-30f), new Vector(1f,1f,1f),new Vector(0f,0f,0f), new Vector(0.5f,0.3f,0.5f),"models/Flag",gl));
+        objects.add(new Model(new Vector(30f,5f,-30f), new Vector(1f,1f,1f),new Vector(0f,0f,0f), new Vector(0.5f,0.3f,0.5f),"models/Flag",gl));
+        objects.add(new Model(new Vector(5.5f,4f,-30f), new Vector(1f,1f,1f),new Vector(0f,0f,0f), new Vector(0.5f,0.3f,0.5f),"models/Flag",gl));
+        objects.add(new Model(new Vector(-5.5f,4f,-30f), new Vector(1f,1f,1f),new Vector(0f,180f,0f), new Vector(0.5f,0.3f,0.5f),"models/Flag",gl));
+        objects.add(new Model(new Vector(20f,3f,0f), new Vector(1f,1f,1f),new Vector(0f,-90f,0f), new Vector(0.7f,0.3f,0.1f),"models/Plane",gl));
+        objects.add(new Model(new Vector(3f,0f,3f), new Vector(1f,1f,1f),new Vector(0f,0f,0f), new Vector(0.2f,0.2f,0.2f),"models/Rock",gl));
+        objects.add(new Model(new Vector(20f,0f,-3f), new Vector(1f,1f,1f),new Vector(0f,0f,0f), new Vector(0.2f,0.2f,0.2f),"models/Rock",gl));
+        objects.add(new Model(new Vector(-14f,0f,13f), new Vector(1f,1f,1f),new Vector(0f,0f,0f), new Vector(0.2f,0.2f,0.2f),"models/Rock",gl));
+        objects.add(new Model(new Vector(-10f,0f,-12f), new Vector(1f,1f,1f),new Vector(0f,0f,0f), new Vector(0.2f,0.2f,0.2f),"models/Rock",gl));
 
         //Borders
         objects.add(new Box(new Vector(30f,2.5f,30f), new Vector(2f,5f,2f),draw,new Vector(0f,153f/255f,1f)));
