@@ -73,8 +73,6 @@ public class Vector {
 
     public void w(float value) { w = value; length = 4;}
 
-    public int length(){return length;}
-
     public float[] getValues(){
         if(length == 3){
             float[] values = {x,y,z};

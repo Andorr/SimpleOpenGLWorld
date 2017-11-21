@@ -51,7 +51,7 @@ public class Human implements KeyListener {
     public void update(){
         if(isWalking){
             position = position.add(velocity);
-            body.walkAnimation();
+            body.walkAnimation(isSprinting);
         }
         if(isRotating){
             rotation.y(rotation.y() + rotationSpeed*rotationDirection);
@@ -167,7 +167,6 @@ public class Human implements KeyListener {
     public Vector cameraPos (){
         if(!rotatingCamera) {
             Vector cameraPos = position.sub(getForward().normalized().multiply(6 + cameraZoom));
-            cameraPos.z(cameraPos.z());
             cameraPos.y(position.y() + cameraZoom -2f);
             return cameraPos;
         }

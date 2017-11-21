@@ -42,36 +42,36 @@ public class Body {
         draw.drawBox(0f,0f,0f,BODY_WIDTH,BODY_HEIGHT,BODY_LENGTH); //Body
 
         //Right Arm
+        gl.glPushMatrix();
         gl.glTranslatef(0f,ARM_HEIGHT*0.5f,0f);
         gl.glRotatef(animRot,1f,0f,0f);
         gl.glColor3f(0.2f,0.2f,0.2f);
         draw.drawAnchorBox(-BODY_WIDTH*0.5f - ARM_WIDTH,0f,0f,ARM_WIDTH,ARM_HEIGHT,ARM_LENGTH);
-        gl.glRotatef(-animRot,1f,0f,0f);
-        gl.glTranslatef(0f,-ARM_HEIGHT*0.5f,0f);
+        gl.glPopMatrix();
 
         //Left Arm
+        gl.glPushMatrix();
         gl.glTranslatef(0f,ARM_HEIGHT*0.5f,0f);
         gl.glRotatef(-animRot,1f,0f,0f);
         gl.glColor3f(0.2f,0.2f,0.2f);
         draw.drawAnchorBox(BODY_WIDTH*0.5f,0f,0f,ARM_WIDTH,ARM_HEIGHT,ARM_LENGTH);
-        gl.glRotatef(animRot,1f,0f,0f);
-        gl.glTranslatef(0f,-ARM_HEIGHT*0.5f,0f);
+        gl.glPopMatrix();
 
         //Right Foot
+        gl.glPushMatrix();
         gl.glTranslatef(0f,- BODY_HEIGHT*0.5f,0f);
         gl.glRotatef(animRot,1f,0f,0f);
         gl.glColor3f(0f,0f,1f);
         draw.drawAnchorBox(0f,0f,0f,LEG_WIDTH,LEG_HEIGHT,LEG_LENGTH);
-        gl.glRotatef(-animRot,1f,0f,0f);
-        gl.glTranslatef(0f,BODY_HEIGHT*0.5f,0f);
+        gl.glPopMatrix();
 
         //Left Foot
+        gl.glPushMatrix();
         gl.glTranslatef(0f,- BODY_HEIGHT*0.5f,0f);
         gl.glColor3f(0f,1f,1f);
         gl.glRotatef(-animRot,1f,0f,0f);
         draw.drawAnchorBox(-LEG_WIDTH,0f,0f,LEG_WIDTH,LEG_HEIGHT,LEG_LENGTH);
-        gl.glRotatef(animRot,1f,0f,0f);
-        gl.glTranslatef(0f,BODY_HEIGHT*0.5f,0f);
+        gl.glPopMatrix();
 
         //Head
         gl.glColor3f(1f,1f,1f);
@@ -81,8 +81,8 @@ public class Body {
         gl.glPopMatrix();
     }
 
-    public void walkAnimation(){
-        animRot += animStrength;
+    public void walkAnimation(boolean isSprinting){
+        animRot += (!isSprinting)? animStrength : animStrength*2f;
 
         if(animRot >= 60 || animRot <= -60){
             animStrength = -animStrength;
@@ -91,12 +91,6 @@ public class Body {
 
     public void resetWalkAnim(){
         animRot = 0f;
-    }
-
-    private float lerp(float start,float end, float percent){
-        if(end >= start && start >= end - 1){return end;}
-        else if(end <= start && start <= end + 1){return end;}
-        return start + percent*(start - end);
     }
 
     public static float minY (){
