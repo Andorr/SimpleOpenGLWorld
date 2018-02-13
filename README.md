@@ -10,8 +10,3 @@ This project was just supposed to be an introduction lesson in OpenGL, but it to
 
 ## Usage
 Compile the project and run Main.java.
-
-## Test Code
-```javascript
-let myVar = "This is some test code";
-```
