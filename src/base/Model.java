@@ -76,6 +76,7 @@ public class Model extends Object{
         gl.glPushMatrix();
         gl.glTranslatef(position().x(),position().y(),position().z());
         gl.glRotatef(rotation.y(),0,1,0);
+        gl.glScalef(size().x(),size().y(),size().z());
         for(int i = 0; i < fs.length; i++){
             Vector c = getColor(color,i);
 

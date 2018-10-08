@@ -142,6 +142,7 @@ public class Main extends GLCanvas implements GLEventListener {
         objects.add(new Model(new Vector(20f,0f,-3f), new Vector(1f,1f,1f),new Vector(0f,0f,0f), new Vector(0.2f,0.2f,0.2f),"models/Rock",gl));
         objects.add(new Model(new Vector(-14f,0f,13f), new Vector(1f,1f,1f),new Vector(0f,0f,0f), new Vector(0.2f,0.2f,0.2f),"models/Rock",gl));
         objects.add(new Model(new Vector(-10f,0f,-12f), new Vector(1f,1f,1f),new Vector(0f,0f,0f), new Vector(0.2f,0.2f,0.2f),"models/Rock",gl));
+        objects.add(new Model(new Vector(-25f,0f,0f),new Vector(2f,2f,2f),new Vector(0f,90f,0f),new Vector(0.9f,0.8f,0.2f),"models/Chogall",gl));
 
         //Borders
         objects.add(new Box(new Vector(30f,2.5f,30f), new Vector(2f,5f,2f),draw,new Vector(0f,153f/255f,1f)));
@@ -157,7 +158,6 @@ public class Main extends GLCanvas implements GLEventListener {
         objects.add(new Box(new Vector(5f,2f,-30f),new Vector(2f,4f,2f),draw, new Vector(0f,153f/255f,1f)));
 
         //Platforms
-
         for(int k = 0; k < 10; k += 2){
             Vector pos = new Vector(-5f + k*2,0.5f*k,-10f);
             objects.add(new Platform(pos,new Vector(2f,0.1f,2f),draw, new Vector(76f/255f,0f,153f/255f),true, Vector.zero()));
